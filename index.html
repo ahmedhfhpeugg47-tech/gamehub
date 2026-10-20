@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#07111f">
+<title>GameHub | ألعاب وتعديلات</title>
+<style>
+:root{--bg:#07111f;--panel:#101f33;--panel2:#142943;--blue:#28a8ff;--cyan:#61e2ff;--text:#f3f8ff;--muted:#a7b8cc;--line:#223954}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 80% -10%,#12365c 0,transparent 38%),var(--bg);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif}
+header{position:sticky;top:0;z-index:5;background:#07111fee;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.wrap{max-width:1100px;margin:auto;padding:16px}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}.brand{font-weight:900;font-size:1.35rem;letter-spacing:.4px}.brand span{color:var(--cyan)}.tag{font-size:.75rem;color:var(--muted)}
+.hero{padding:36px 0 22px}.hero h1{font-size:clamp(2rem,6vw,3.5rem);line-height:1.15;margin:8px 0 12px}.hero h1 span{color:var(--cyan)}.hero p{color:var(--muted);max-width:620px;line-height:1.8;margin:0 0 20px}
+.search{display:flex;gap:8px;max-width:650px}.search input{flex:1;min-width:0;background:#0c1a2b;border:1px solid var(--line);border-radius:12px;padding:14px;color:var(--text);font:inherit;outline:none}.search input:focus{border-color:var(--blue)}
+button,.btn{border:0;border-radius:12px;background:linear-gradient(135deg,var(--blue),#0878d1);color:#00101d;font-weight:800;padding:12px 16px;font:inherit;cursor:pointer;text-decoration:none;display:inline-flex;justify-content:center;align-items:center}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0 22px}.filter{background:#0c1a2b;color:var(--muted);border:1px solid var(--line);padding:9px 13px;border-radius:999px;cursor:pointer}.filter.active{background:#123c60;color:white;border-color:var(--blue)}
+.section-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:24px 0 14px}.section-head h2{font-size:1.25rem;margin:0}.section-head small{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.card{background:linear-gradient(160deg,#12243a,#0c1929);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .2s,border-color .2s}.card:hover{transform:translateY(-3px);border-color:#287cb7}.art{height:115px;display:grid;place-items:center;font-size:3.2rem;background:radial-gradient(circle at 50% 40%,#1c5b86,#0b1a2b 70%);border-bottom:1px solid var(--line)}.content{padding:14px}.content h3{margin:0 0 6px;font-size:1.05rem}.content p{margin:0 0 12px;color:var(--muted);font-size:.9rem;line-height:1.65;min-height:46px}.meta{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:12px;font-size:.78rem;color:var(--muted)}.pill{border:1px solid #27577b;border-radius:999px;padding:4px 8px;color:#9cddff}.card .btn{width:100%;padding:10px;font-size:.9rem}
+.notice{margin:22px 0;padding:14px 16px;border:1px solid #715d2b;background:#2a2414;color:#f9e7b5;border-radius:14px;line-height:1.7;font-size:.9rem}
+footer{margin-top:34px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem;line-height:1.8}.empty{display:none;text-align:center;color:var(--muted);padding:30px}
+@media(min-width:700px){.hero{padding-top:52px}.art{height:140px}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav"><div><div class="brand">GAME<span>HUB</span> 🎮</div><div class="tag">اكتشف لعبتك التالية</div></div><a class="btn" href="#games">تصفح الألعاب</a></div></header>
+<main class="wrap">
+<section class="hero"><div class="tag">مكتبة ألعاب وتعديلات المجتمع</div><h1>عالم الألعاب،<br><span>في مكان واحد.</span></h1><p>اكتشف الألعاب والإضافات وتعديلات المجتمع، مع معلومات واضحة عن الإصدار والتوافق ومصدر التنزيل.</p>
+<div class="search"><input id="search" type="search" placeholder="ابحث عن لعبة أو تعديل..." aria-label="ابحث عن لعبة"><button id="searchBtn">بحث</button></div></section>
+<div class="filters" aria-label="تصنيفات"><button class="filter active" data-cat="all">الكل</button><button class="filter" data-cat="game">ألعاب</button><button class="filter" data-cat="mod">تعديلات</button><button class="filter" data-cat="guide">أدلة</button></div>
+<section id="games"><div class="section-head"><h2>استكشف المكتبة</h2><small id="count">6 عناصر</small></div>
+<div class="grid" id="grid">
+<article class="card" data-cat="game" data-search="لعبة تجريبية game demo"><div class="art">🎮</div><div class="content"><h3>لعبة تجريبية</h3><p>بطاقة نموذجية لتجربة شكل صفحات الألعاب على الموقع.</p><div class="meta"><span class="pill">لعبة</span><span>الإصدار: تجريبي</span></div><a class="btn" href="#howto">التفاصيل</a></div></article>
+<article class="card" data-cat="mod" data-search="حزمة واجهات مظهر skin ui pack"><div class="art">✨</div><div class="content"><h3>حزمة مظهر وواجهات</h3><p>مثال لتعديل بصري أو حزمة واجهات ينشرها صاحبها بإذن.</p><div class="meta"><span class="pill">تعديل</span><span>بحسب اللعبة</span></div><a class="btn" href="#howto">التفاصيل</a></div></article>
+<article class="card" data-cat="game" data-search="سباق سيارات racing"><div class="art">🏎️</div><div class="content"><h3>ألعاب السباق</h3><p>مكان مخصص لألعاب السيارات والسباقات التي تضيفها لاحقًا.</p><div class="meta"><span class="pill">ألعاب</span><span>أندرويد</span></div><a class="btn" href="#howto">التفاصيل</a></div></article>
+<article class="card" data-cat="mod" data-search="خرائط مراحل maps levels"><div class="art">🗺️</div><div class="content"><h3>خرائط ومراحل إضافية</h3><p>اعرض الخرائط والمراحل التي يسمح أصحابها بإعادة توزيعها.</p><div class="meta"><span class="pill">تعديل</span><span>محتوى مجتمع</span></div><a class="btn" href="#howto">التفاصيل</a></div></article>
+<article class="card" data-cat="guide" data-search="دليل تثبيت install guide"><div class="art">📘</div><div class="content"><h3>دليل التثبيت الآمن</h3><p>اشرح للزوار كيفية التحقق من المصدر والأذونات والتوافق.</p><div class="meta"><span class="pill">دليل</span><span>مساعدة</span></div><a class="btn" href="#howto">اقرأ الدليل</a></div></article>
+<article class="card" data-cat="game" data-search="ألعاب مغامرات adventure"><div class="art">🧭</div><div class="content"><h3>ألعاب المغامرات</h3><p>قسم قابل للتوسعة لإضافة الألعاب مع وصفها وروابطها الرسمية.</p><div class="meta"><span class="pill">ألعاب</span><span>أندرويد</span></div><a class="btn" href="#howto">التفاصيل</a></div></article>
+</div><div class="empty" id="empty">لم نعثر على نتائج. جرّب كلمة أخرى.</div></section>
+<section id="howto" class="notice"><strong>تنبيه قبل النشر:</strong> هذه نسخة تجريبية للواجهة، والبطاقات ليست تنزيلات حقيقية. أضف فقط ملفات تملكها أو لديك إذن بتوزيعها، واستخدم روابط رسمية أو موثوقة وافحص الملفات قبل إتاحتها.</section>
+</main>
+<footer><div class="wrap">© GameHub — نموذج أولي لموقع ألعاب. أضف سياسة الخصوصية ووسيلة تواصل وشروط الاستخدام قبل إطلاق الموقع للعامة.</div></footer>
+<script>
+const cards=[...document.querySelectorAll('.card')], search=document.getElementById('search'), filters=[...document.querySelectorAll('.filter')];let category='all';
+function update(){const q=search.value.trim().toLowerCase();let shown=0;cards.forEach(c=>{const okCat=category==='all'||c.dataset.cat===category;const okQ=(c.dataset.search+' '+c.innerText).toLowerCase().includes(q);c.style.display=okCat&&okQ?'':'none';if(okCat&&okQ)shown++});document.getElementById('count').textContent=shown+' عناصر';document.getElementById('empty').style.display=shown?'none':'block'}
+filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');category=b.dataset.cat;update()}));document.getElementById('searchBtn').addEventListener('click',update);search.addEventListener('input',update);
+</script>
+</body>
+</html>
